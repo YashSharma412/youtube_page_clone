@@ -1,0 +1,131 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,300;1,400;1,500;1,700&display=swap');
+
+:root{
+    --clr_light: #ffffff;
+    --bg_black: linear-gradient(180deg, rgba(0,0,0,1) 0%, rgba(37,37,37,1) 100%);
+    --bg_dark: #272727;
+    --font_family_article: 'Roboto', sans-serif;
+    --box-shadow: inset 0 1px 2px hsla(0,5%,5%,0);
+    --box-border: 1px solid #303030;
+}
+
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: var(--font_family_article);
+    /* outline: 1px solid red; */
+    /* background-color: rgba(0,100, 0, 0.2); */
+}
+
+body, html{
+    width: 100dvw;
+    height: 100dvh;
+    background: var(--bg_black);
+    display: flex;
+    flex-direction: column;
+}
+
+main{
+    flex: 1;
+    color: var(--clr_light);
+}
+
+#page__nav{
+    color: var(--clr_light);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0.5rem 1.5rem;
+    gap: 3rem;
+    position: sticky;
+    top: 0;
+}
+
+.nav__blocks{
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+}
+
+#page__nav .nav__blocks:nth-child(2){
+    flex: 1 1;
+    max-width: 640px;
+    justify-content: center;
+    overflow: hidden;
+    /* border-radius: 30px; */
+}
+.User_profile_logo{
+    width: 28px;
+    aspect-ratio: 1;
+    overflow: hidden;
+    border-radius: 50%;
+}
+
+.nav__btn{
+    aspect-ratio: 1/1;
+    padding: 5px 10px;
+    border-radius: 50%;
+    background-color: var(--bg_dark);
+    font-size: 1.1rem;
+}
+
+.search-box{
+    flex: 1 1;
+    display: flex;
+    align-items: center;
+    box-shadow: none;
+    border: none;
+}
+
+.search-box>button{
+    box-shadow: var(--box-shadow);
+    border: var(--box-border);
+}
+
+.nav__search-container{
+    flex: 1 1;
+    display: flex;
+    align-items: center;
+    box-shadow: var(--box-shadow);
+    border: var(--box-border);
+    border-bottom-left-radius: 30px;
+    border-top-left-radius: 30px;
+    /* padding: 6px; */
+}
+
+.nav__search-container input {
+    flex: 1 1;
+    outline: none;
+    border: none;
+    background: transparent;
+    padding: 10px 15px;
+    color: var(--clr_light);
+}
+
+.nav__search-container label{
+    padding-left: 10px;
+    visibility: hidden;
+}
+
+.search-box > button{
+    background-color: var(--bg_dark);
+    padding: 10px 25px;
+    border-top-right-radius: 30px;
+    border-bottom-right-radius: 30px;
+    
+}
+
+#nav__menu-btn{
+    font-size: 1.2rem;
+}
+
+#sidebar{
+    width: 270px;
+    height: 100%;
+    background-color: red;
+    padding: 20px 30px;
+    
+}
