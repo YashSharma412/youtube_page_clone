@@ -5,45 +5,319 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="shortcut icon" href="./assets/image/youtube.ico" type="image/x-icon">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <link rel="stylesheet" href="util.css">
-    <link rel="stylesheet" href="style.css">
-    <title>Youtube</title>
+    <link rel="stylesheet" href="./styles/style.css">
+    <link rel="stylesheet" href="./styles/navbar.css">
+    <link rel="stylesheet" href="./styles/sidebar.css">
+    <link rel="stylesheet" href="./styles/main_section.css">
+    <link rel="stylesheet" href="./styles/video_thumbnail.css">
+    <title>Youtube Clone</title>
 </head>
 <body>
-    <nav id="page__nav">
-        <div class="nav__blocks">
-            <div class="icon__container" id="nav__menu-btn"><i class="fa-solid fa-bars"></i></div>
-            <div><a href="./index.html"><img src="./assets/image/Logo.svg" alt="youtube logo"></a></div>
-        </div>
-        <div class="nav__blocks">
-            <div class="search-box">
-                <div class="nav__search-container">
-                    <label for="search-input"><i class="fa-solid fa-magnifying-glass"></i></label>
-                    <input id="search-input" type="text" placeholder="Search">
-                </div>
-                <button class="btn"><i class="fa-solid fa-magnifying-glass"></i></button>
+    <header>
+        <nav id="page__nav">
+            <div class="nav__blocks">
+                <div class="icon__container nav__menu-btn" id="sideBar-toggleBtn"><i class="fa-solid fa-bars menu-items-icon"></i></div>
+                <div><a href="./index.html"><img src="./assets/image/Logo.svg" alt="youtube logo"></a></div>
             </div>
-            <button class="btn nav__btn"><i class="fa-solid fa-microphone"></i></button>
-        </div>
-        <div class="nav__blocks">
-            <div class="icon__container"><i class="fa-solid fa-video"></i></div>
-            <div class="icon__container"><i class="fa-regular fa-bell"></i></div>
-            <div class="User_profile_logo"><img src="./assets/image/user (1).png" alt="user"></div>
-        </div>
-    </nav>
+            <div class="nav__blocks">
+                <div class="search-box">
+                    <div class="nav__search-container">
+                        <label for="search-input"><img src="./assets/icons/search.svg" alt=""></label>
+                        <input class="search-input" id="search-input" type="text" placeholder="Search">
+                    </div>
+                    <button class="btn"><i class="fa-solid fa-magnifying-glass"></i></button>
+                </div>
+                <button class="btn nav__btn"><i class="fa-solid fa-microphone"></i></button>
+            </div>
+            <div class="nav__blocks">
+                <div class="icon__container"><i class="fa-solid fa-video"></i></div>
+                <div class="icon__container"><i class="fa-regular fa-bell"></i></div>
+                <div class="User_profile_logo"><img src="./assets/image/user (1).png" alt="user"></div>
+            </div>
+        </nav>
+    </header>
     <main>
         <aside id="sidebar">
-            <div>
-                <div><i class="fa-solid fa-house"></i></div>
-                <div>Home</div>
+            <div class="side-bar-section side-bar-section-1">
+                <div class="side-bar-menu-items">
+                    <div><i class="fa-solid fa-house menu-items-icon"></i></div>
+                    <div>Home</div>
+                </div>
+                
+                <div class="side-bar-menu-items">
+                    <div><i class="fa-regular fa-compass menu-items-icon"></i></div>
+                    <div>Explore</div>
+                </div>
+        
+                <div class="side-bar-menu-items">
+                    <div><img src="./assets/icons/subscribe.svg" alt="icon" class="menu-items-icon" /></div>
+                    <div>Subscriptions</div>
+                </div>
             </div>
+            <div class="side-bar-section side-bar-section-2">
+                <div class="side-bar-menu-items">
+                    <div><img src="./assets/icons/Library.svg" alt="icon" class="menu-items-icon" /></div>
+                    <div>Library</div>
+                </div>
+        
+                <div class="side-bar-menu-items">
+                    <div><img src="./assets/icons/history.svg" alt="icon" class="menu-items-icon" /></div>
+                    <div>History</div>
+                </div>
+        
+                <div class="side-bar-menu-items">
+                    <div><img src="./assets/icons/YourVid.svg" alt="icon" class="menu-items-icon" /></div>
+                    <div>Your Videos</div>
+                </div>
+        
+                
+                <div class="side-bar-menu-items">
+                    <div><img src="./assets/icons/watchLater.svg" alt="icon" class="menu-items-icon" /></div>
+                    <div>Watch Later</div>
+                </div>
+        
+                <div class="side-bar-menu-items">
+                    <div><img src="./assets/icons/likedVideos.svg" alt="icon" class="menu-items-icon" /></div>
+                    <div>Liked Videos</div>
+                </div>
+        
+                <div class="side-bar-menu-items">
+                    <div><img src="./assets/icons/showMore.svg" alt="icon" class="menu-items-icon" /></div>
+                    <div>Show More</div>
+                </div>
+            </div>  
+            <div class="side-bar-section side-bar-section-3">
+                <div class="side-bar-menu-items">
+                    <h1 class="side-bar-heading">Subscriptions</h1>
+                </div>
 
-            <div>
-                <div><i class="fa-regular fa-compass"></i></div>
-                <div>Home</div>
+                <div class="side-bar-menu-items sidebar-channels">
+                    <div><img src="./assets/image/channel_logos/channel_img1.jpeg" alt="channel image" class="sidebar-channel-img" /></div>
+                    <div>James Gouse</div>
+                </div>
+
+                <div class="side-bar-menu-items sidebar-channels">
+                    <div><img src="./assets/image/channel_logos/channel_img2.jpeg" alt="channel image" class="sidebar-channel-img" /></div>
+                    <div>Alan Cooper</div>
+                </div>
+
+                <div class="side-bar-menu-items sidebar-channels">
+                    <div><img src="./assets/image/channel_logos/channel_img3.jpeg" alt="channel image" class="sidebar-channel-img" /></div>
+                    <div>Marcus Levin</div>
+                </div>
+
+                <div class="side-bar-menu-items sidebar-channels">
+                    <div><img src="./assets/image/channel_logos/channel_img4.jpeg" alt="channel image" class="sidebar-channel-img" /></div>
+                    <div>Alexis Sears</div>
+                </div>
+
+                <div class="side-bar-menu-items sidebar-channels">
+                    <div><img src="./assets/image/channel_logos/channel_img5.jpeg" alt="channel image" class="sidebar-channel-img" /></div>
+                    <div>Jesica Lambert</div>
+                </div>
+
+                <div class="side-bar-menu-items sidebar-channels">
+                    <div><img src="./assets/image/channel_logos/channel_img6.jpeg" alt="channel image" class="sidebar-channel-img" /></div>
+                    <div>Anna White</div>
+                </div>
+
+                <div class="side-bar-menu-items sidebar-channels">
+                    <div><img src="./assets/image/channel_logos/channel_img7.jpeg" alt="channel image" class="sidebar-channel-img" /></div>
+                    <div>Skylar Dias</div>
+                </div>
+
+                <div class="side-bar-menu-items">
+                    <div><img src="./assets/icons/showMore.svg" alt="icon" class="menu-items-icon" /></div>
+                    <div>Show More</div>
+                </div>
             </div>
-        </aside>        
+            <div class="side-bar-section side-bar-section-4">
+                <div class="side-bar-menu-items">
+                    <h1 class="side-bar-heading">Explore</h1>
+                </div>
+
+                <div class="side-bar-menu-items">
+                    <div><img src="./assets/icons/trending.svg" alt="icon" class="menu-items_icons" /></div>
+                    <div>Trending</div>
+                </div>
+
+                <div class="side-bar-menu-items">
+                    <div><img src="./assets/icons/shopping.svg" alt="icon" class="menu-items_icons" /></div>
+                    <div>Shopping</div>
+                </div>
+
+                <div class="side-bar-menu-items">
+                    <div><img src="./assets/icons/music.svg" alt="icon" class="menu-items_icons" /></div>
+                    <div>Music</div>
+                </div>
+
+                <div class="side-bar-menu-items">
+                    <div><img src="./assets/icons/movies.svg" alt="icon" class="menu-items_icons" /></div>
+                    <div>Movies</div>
+                </div>
+
+                <div class="side-bar-menu-items">
+                    <div><img src="./assets/icons/live.png" alt="icon" class="menu-items_icons" /></div>
+                    <div>Live</div>
+                </div>
+
+                <div class="side-bar-menu-items">
+                    <div><img src="./assets/icons/Gaming.svg" alt="icon" class="menu-items_icons" /></div>
+                    <div>Gaming</div>
+                </div>
+
+                <div class="side-bar-menu-items">
+                    <div><img src="./assets/icons/news.svg" alt="icon" class="menu-items_icons" /></div>
+                    <div>News</div>
+                </div>
+
+                <div class="side-bar-menu-items">
+                    <div><img src="./assets/icons/sports.png" alt="icon" class="menu-items_icons" /></div>
+                    <div>Sports</div>
+                </div>
+
+                <div class="side-bar-menu-items">
+                    <div><img src="./assets/icons/learning.svg" alt="icon" class="menu-items_icons" /></div>
+                    <div>Learning</div>
+                </div>
+
+                <div class="side-bar-menu-items">
+                    <div><img src="./assets/icons/fashionAndBeauty.svg" alt="icon" class="menu-items_icons" /></div>
+                    <div>Fashion & Beauty</div>
+                </div>
+
+                <div class="side-bar-menu-items">
+                    <div><img src="./assets/icons/podcasts.svg" alt="icon" class="menu-items_icons" /></div>
+                    <div>Podcasts</div>
+                </div>
+
+            </div>
+            <div class="side-bar-section side-bar-section-5">
+                <div class="side-bar-menu-items">
+                    <h1 class="side-bar-heading">More from Youtube</h1>
+                </div>
+
+                <div class="side-bar-menu-items">
+                    <div><img src="./assets/icons/youtubePremium.svg" alt="icon" class="menu-items_icons" /></div>
+                    <div>Youtube Premium</div>
+                </div>
+                
+                <div class="side-bar-menu-items">
+                    <div><img src="./assets/icons/youtubeStudio.svg" alt="icon" class="menu-items_icons" /></div>
+                    <div>Youtube Studio</div>
+                </div>
+                
+                <div class="side-bar-menu-items">
+                    <div><img src="./assets/icons/youtubeMusic.svg" alt="icon" class="menu-items_icons" /></div>
+                    <div>Youtube Music</div>
+                </div>
+                
+                <div class="side-bar-menu-items">
+                    <div><img src="./assets/icons/youtubeKids.svg" alt="icon" class="menu-items_icons" /></div>
+                    <div>Youtube Kids</div>
+                </div>
+            </div>
+            <div class="side-bar-section side-bar-section-6">
+                <div class="side-bar-menu-items">
+                    <div><img src="./assets/icons/settings.svg" alt="icon" class="menu-items_icons" /></div>
+                    <div>Settings</div>
+                </div>
+                
+                <div class="side-bar-menu-items">
+                    <div><img src="./assets/icons/ReortHistry.svg" alt="icon" class="menu-items_icons" /></div>
+                    <div>Report History</div>
+                </div>
+                
+                <div class="side-bar-menu-items">
+                    <div><img src="./assets/icons/Help.svg" alt="icon" class="menu-items_icons" /></div>
+                    <div>Help</div>
+                </div>
+                
+                <div class="side-bar-menu-items">
+                    <div><img src="./assets/icons/Feedback.svg" alt="icon" class="menu-items_icons" /></div>
+                    <div>Send feedback</div>
+                </div>
+            </div>
+            <div class="side-bar-section side-bar-section-7">
+                <ul class="sidebar__footer_links-container">
+                    <a class="sidebar__footer_links" href="#">About</a>
+                    <a class="sidebar__footer_links" href="#">Press</a>
+                    <a class="sidebar__footer_links" href="#">Copyright</a>
+                    <a class="sidebar__footer_links" href="#">Contact us</a>
+                    <a class="sidebar__footer_links" href="#">Creators</a>
+                    <a class="sidebar__footer_links" href="#">Advertise</a>
+                    <a class="sidebar__footer_links" href="#">Developers</a>
+                </ul>
+                <ul class="sidebar__footer_links-container">
+                    <a class="sidebar__footer_links" href="#">Terms</a>
+                    <a class="sidebar__footer_links" href="#">Privacy</a>
+                    <a class="sidebar__footer_links" href="#">Policy & Safety</a>
+                    <a class="sidebar__footer_links" href="#">How Youtube Works</a>
+                    <a class="sidebar__footer_links" href="#">Test new features</a>
+                </ul>
+                <div class="sidebar__footer-text">
+                    <p >© Made by Yash Sharma</p>
+                </div>
+            </div>
+        </aside>
+        <section class="homePage-section">
+            <section class="filters-section">
+                <button class="filter-btn filters__goLeft-btn">
+                    <i class="fa-solid fa-chevron-left"></i>
+                </button>
+                <ul class="filters__list">
+                    <li class="filter-items active-filter">All</li>
+                    <li class="filter-items">Learning</li>
+                    <li class="filter-items">JavaScript</li>
+                    <li class="filter-items">Gaming</li>
+                    <li class="filter-items">Web-Devolopment</li>
+                    <li class="filter-items">Anime</li>
+                    <li class="filter-items">Mixes</li>
+                    <li class="filter-items">Free Fire</li>
+                    <li class="filter-items">Haikyu!!</li>
+                    <li class="filter-items">Alone</li>
+                    <li class="filter-items">Hell Boy</li>
+                    <li class="filter-items">Java</li>
+                    <li class="filter-items">Appu</li>
+                    <li class="filter-items">Css</li>
+                    <li class="filter-items">AL Learning</li>
+                    <li class="filter-items">ML Learning</li>
+                    <li class="filter-items">Rc Cras</li>
+                    <li class="filter-items">Music</li>
+                    <li class="filter-items">Shorts</li>
+                    <li class="filter-items">League</li>
+                    <li class="filter-items">Smartphones</li>
+                    <li class="filter-items">Watched</li>
+                    <li class="filter-items">New to you</li>
+                </ul>
+                <button class="filter-btn filters__goRight-btn">
+                    <i class="fa-solid fa-chevron-right"></i>
+                </button>
+            </section>
+            <section id="video__thumbnails_grid" class="videos__display-section">
+                <!--  -->
+                <div class="video__thumbnail-container">
+                    <div class="video__thumbnail_img-container">
+                        <img src="https://i.ytimg.com/vi/RBPVaBAQE-w/hqdefault.jpg" alt="video thumbnail">
+                    </div>
+                    <div class="video__thumbnail_body">
+                        <div class="video__channel_img-container">
+                            <img src="https://yt3.ggpht.com/ytc/AOPolaQt-zLecnlDmH_oTiJtJ1O2whPlf6nFg4fG_XCDKw=s88-c-k-c0x00ffffff-no-rj" alt="Channel img">
+                        </div>
+                        <div class="video__thumbnail_details">
+                            <h4>Systumm | The UK07 Rider X Elvish Yadav | Official Music Video | Sangam Vigyaanik | Dushyant Bhatli</h4>
+                            <h5>The UK07 Rider</h5>
+                            <p>
+                                <span>3.75M </span> 
+                                <span style="font-weight: 700;"> · </span> 
+                                <span> 03-08-2023</span></p>
+                        </div>
+                    </div>
+                </div>
+                <!--  -->
+            </section>
+        </section>
     </main>
-    <script src="script.js"></script>
+    <script src="./scripts/script.js"></script>
 </body>
 </html>

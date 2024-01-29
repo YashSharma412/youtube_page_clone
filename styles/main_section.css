@@ -1,0 +1,64 @@
+.homePage-section{
+    padding: 0.5rem;
+    outline: 1px solid red;
+    width: 100%;
+    position: relative;
+}
+
+/* ! Filter section CSS */
+
+.filters-section{
+    position: sticky;
+    top: 0;
+    /* outline: 1px solid red; */
+    width: 100%;
+    display: grid;
+    grid-template-columns: 45px 1fr 45px;
+    align-items: center;
+    justify-content: space-between;
+    gap: 0.65rem;
+    padding: 0.35rem 0rem;
+}
+
+.filter-btn{
+    width: 40px;
+    aspect-ratio: 1/1;
+    border-radius: 50%;
+    color: var(--txt_clr);
+    background-color: transparent;
+    border: none;
+}
+
+.filter-btn:hover{
+    background-color: var(--clrActive);
+}
+
+.filters__list{
+    gap: 1rem;
+    overflow-x: scroll;
+    display: flex;
+    flex-wrap: nowrap;
+    text-wrap: nowrap;
+}
+
+.filters__list::-webkit-scrollbar{
+    display: none;
+}
+
+.filter-items{
+    display: inline-block;
+    cursor: pointer;
+    background-color: var(--clrDark);
+    padding: 5px 12px;
+    border-radius: 10px;
+    color: var(--txt_clr);
+}
+
+.active-filter{
+    background-color: var(--txt_clr);
+    color: var(--txt_clr_active);
+}
+
+.filter-items:hover {
+    background-color: #adadad7d;
+}

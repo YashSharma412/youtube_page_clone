@@ -1,40 +1,6 @@
 
-@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,300;1,400;1,500;1,700&display=swap');
-
-:root{
-    --clr_light: #ffffff;
-    --bg_black: linear-gradient(180deg, rgba(0,0,0,1) 0%, rgba(37,37,37,1) 100%);
-    --bg_dark: #272727;
-    --font_family_article: 'Roboto', sans-serif;
-    --box-shadow: inset 0 1px 2px hsla(0,5%,5%,0);
-    --box-border: 1px solid #303030;
-}
-
-
-*{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: var(--font_family_article);
-    /* outline: 1px solid red; */
-    /* background-color: rgba(0,100, 0, 0.2); */
-}
-
-body, html{
-    width: 100dvw;
-    height: 100dvh;
-    background: var(--bg_black);
-    display: flex;
-    flex-direction: column;
-}
-
-main{
-    flex: 1;
-    color: var(--clr_light);
-}
-
 #page__nav{
-    color: var(--clr_light);
+    color: var(--txt_clr);
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -42,12 +8,14 @@ main{
     gap: 3rem;
     position: sticky;
     top: 0;
+    height: 54px;
+    width: 100%;
 }
 
 .nav__blocks{
     display: flex;
     align-items: center;
-    gap: 1.5rem;
+    gap: 1.2rem;
 }
 
 #page__nav .nav__blocks:nth-child(2){
@@ -78,11 +46,17 @@ main{
     align-items: center;
     box-shadow: none;
     border: none;
+    /* outline: 1px solid red; */
+    border-radius: 30px;
+    overflow: hidden;
 }
 
 .search-box>button{
+    padding: 10px;
+    padding-right: 25px;
     box-shadow: var(--box-shadow);
     border: var(--box-border);
+
 }
 
 .nav__search-container{
@@ -102,30 +76,25 @@ main{
     border: none;
     background: transparent;
     padding: 10px 15px;
-    color: var(--clr_light);
+    color: var(--txt_clr);
+    min-width: 20px;
 }
 
-.nav__search-container label{
+#search-input:focus .nav__search-container label>img{
+    visibility: hidden;
+}
+
+.nav__search-container label>img{
     padding-left: 10px;
     visibility: hidden;
 }
 
 .search-box > button{
     background-color: var(--bg_dark);
-    padding: 10px 25px;
     border-top-right-radius: 30px;
     border-bottom-right-radius: 30px;
-    
 }
 
-#nav__menu-btn{
-    font-size: 1.2rem;
-}
-
-#sidebar{
-    width: 270px;
-    height: 100%;
-    background-color: red;
-    padding: 20px 30px;
-    
+.nav__menu-btn{
+    font-size: 1rem;
 }
