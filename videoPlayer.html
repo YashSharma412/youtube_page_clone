@@ -9,7 +9,9 @@
     <link rel="stylesheet" href="./styles/navbar.css">
     <link rel="stylesheet" href="./styles/sidebar.css">
     <link rel="stylesheet" href="./styles/main_section.css">
-    <link rel="stylesheet" href="./styles/video_thumbnail.css">
+    <link rel="stylesheet" href="./styles/videoPlayer.css">
+    <link rel="stylesheet" href="./styles/videoComments.css">
+    <link rel="stylesheet" href="./styles/suggestedVideos.css">
     <title>Youtube Clone</title>
 </head>
 <body>
@@ -264,45 +266,91 @@
             </div>
         </aside>
         <section class="homePage-section">
-            <section class="filters-section">
-                <button class="filter-btn filters__goLeft-btn">
-                    <i class="fa-solid fa-chevron-left"></i>
-                </button>
-                <ul class="filters__list">
-                    <li class="filter-items active-filter">All</li>
-                    <li class="filter-items">Learning</li>
-                    <li class="filter-items">JavaScript</li>
-                    <li class="filter-items">Gaming</li>
-                    <li class="filter-items">Web-Devolopment</li>
-                    <li class="filter-items">Anime</li>
-                    <li class="filter-items">Mixes</li>
-                    <li class="filter-items">Free Fire</li>
-                    <li class="filter-items">Haikyu!!</li>
-                    <li class="filter-items">Alone</li>
-                    <li class="filter-items">Hell Boy</li>
-                    <li class="filter-items">Java</li>
-                    <li class="filter-items">Appu</li>
-                    <li class="filter-items">Css</li>
-                    <li class="filter-items">AL Learning</li>
-                    <li class="filter-items">ML Learning</li>
-                    <li class="filter-items">Rc Cras</li>
-                    <li class="filter-items">Music</li>
-                    <li class="filter-items">Shorts</li>
-                    <li class="filter-items">League</li>
-                    <li class="filter-items">Smartphones</li>
-                    <li class="filter-items">Watched</li>
-                    <li class="filter-items">New to you</li>
-                </ul>
-                <button class="filter-btn filters__goRight-btn">
-                    <i class="fa-solid fa-chevron-right"></i>
-                </button>
-            </section>
-            <section id="video__thumbnails_grid" class="videos__display-section">
+            <section class="videoPlayer__page-container">
+                <section class="videoPlayer__details-container">
+                    <div class="videoPlayer_iframe-container">
+                        <div id="videoPlayer"></div>
+                    </div>
+                    <h2 id="videoTitle"></h2>
+                    <div class="video__details">
+                        <div class="channel__Div">
+                            <div class="channel__img_div">
+                                <img src="./assets/image/channel_logos/channel_img1.jpeg" alt="channel image" id="channel__img" class="channel__img" />
+                            </div>
+                            <div class="channel_details">
+                                <h3 id="channel__name"></h3>
+                                <h5>
+                                    <span id="subscriberCount"></span> subscribers
+                                </h5>
+                            </div>
+                            <button class="subscribe_btn btn">Subscribe</button>
+                        </div>
+                        <div class="video__options_div">
+                            <div class="video__option likesAndDislikes">
+                                <span class="video__likes_div">
+                                    <img src="./assets/icons/likeIcon.svg" alt="likes">
+                                    <span id="video__likes">50</span>
+                                </span>
+                                <span class="video__dislikes_div">
+                                    <img src="./assets/icons/dislikeIcon.svg" alt="dislikes">
+                                    <span id="video__dislikes"></span>
+                                </span>
+                            </div>
+                            <div class="video__option">
+                                <img src="./assets/icons/share.svg" alt="share"> Share
+                            </div>
+                            <div class="video__option">
+                                <img src="./assets/icons/download.svg" alt="download"> Download
+                            </div>
+                            <div class="video__option">
+                                <img src="./assets/icons/moreOptions.svg" alt="options">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="video__description" >
+                        <p class="collapsed" id="video__description">
+                        </p>
+                        <div class="description__showbtn"></div>
+                    </div>
+                    <div class="comments_container">
+                        <div class="comments__sectionHeader">
+                            <h1> <span id="total_comments" class="total_comments"></span> Comments</h1>
+                            <div class="sortBy">
+                                <img src="./assets/icons/sortIcon.svg" alt="likes">
+                                <span>Sort by</span>
+                            </div>
+                        </div>
+                        <div class="add_comment">
+                            <div>
+                                <div class="commenter__img_div">
+                                    <img src="./assets/image/user (1).png" alt="">
+                                </div>
+                                <input id="addCommentInput" type="text" placeholder="Add a comment...">
+                            </div>
+                            <div id="Comment__buttons" style="display: flex; align-items: center; justify-content: end; gap: 1rem;">
+                                <button class="Comment__button">Cancel</button>
+                                <button class="Comment__button">Comment</button>
+                            </div>
+                        </div>
+                        <div class="video__comments-container" id="video__comments-container"></div>
+                    </div>
+
+                </section>
+                <aside class="recommnededVideos-container">
+                    <section class="suggested__filter_section">
+                        <ul class="suggested__filters">
+                            <li class="suggested__filter active">All</li>
+                            <li class="suggested__filter">New to you</li>
+                            <li class="suggested__filter">Learning</li>
+                        </ul>
+                    </section>
+                    <section id="suggested__videos_section" class="suggested__videos_section"></section>
+                </aside>
             </section>
         </section>
     </main>
     <script src="https://www.youtube.com/iframe_api"></script>
     <script src="./scripts/script.js"></script>
-    <script src="./scripts/fetchData.js"></script>
+    <script src="./scripts/videoPlayer.js"></script>
 </body>
 </html>

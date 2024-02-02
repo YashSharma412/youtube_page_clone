@@ -1,7 +1,7 @@
 /* ! Sidebar css */
 
 #sidebar {
-  width: 0px;
+  width: 70px;
   height: 100%;
   display: flex;
   flex-direction: column;
@@ -11,11 +11,10 @@
   overflow-y: scroll;
   transition: width 0.35s ease-in;
   overflow-x: hidden;
-  /* outline: 1px solid red; */
 }
 
 .sidebarOpened {
-  width: 290px !important;
+  width: 250px !important;
 }
 
 #sidebar::-webkit-scrollbar {
@@ -60,7 +59,6 @@
   width: 24px;
 }
 
-
 .side-bar-heading {
   color: var(--Gray-Color, #aaa);
   font-size: 16px;
@@ -104,4 +102,7 @@
     width: 220px;
     overflow-y: scroll !important;
   } */
+  #sidebar{
+    width: 0;
+  }
 }
