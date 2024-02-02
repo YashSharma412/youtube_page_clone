@@ -4,13 +4,28 @@ const searchBtn = document.getElementById('search-btn');
 const searchInput = document.getElementById('search-input');
 const searchForm = document.getElementById('search-box');
 const homepageVideosGridContainer = document.getElementById("video__thumbnails_grid");
+const searchedForVid = localStorage.getItem("searchedForVid") || false;
 
+const backToHome = document.getElementById("backToHomepage");
+backToHome.addEventListener("click", ()=>{
+    localStorage.removeItem("searchQuerry");
+    localStorage.removeItem("searchedForVid");
+    localStorage.removeItem("currentVideoId");
+    window.location.href = "../index.html";
+})
 
 window.addEventListener('load', ()=>{
-    localStorage.removeItem("searchQuerry");
+    // localStorage.removeItem("searchQuerry");
     localStorage.removeItem("currentVideoId");
+    if (searchedForVid) {
+        localStorage.setItem("searchedForVid", false);
+        const searchNewVid = localStorage.getItem("searchQuerry");
+        fetchVideosList(searchNewVid, MAX_RESULTS)
+    } else {
+        fetchVideosList("", MAX_RESULTS)
+    }
 })
-fetchVideosList("", MAX_RESULTS)
+
 
 searchForm.addEventListener('submit',(e)=>{
 e.preventDefault();

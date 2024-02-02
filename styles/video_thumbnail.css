@@ -24,6 +24,7 @@
     flex-direction: column;
     border-radius: 10px;
     overflow: hidden;
+    cursor: pointer;
 }
 .video__thumbnail_img-container{
     flex: 8;

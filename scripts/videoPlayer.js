@@ -16,6 +16,23 @@ const suggestedVideosContainer  = document.getElementById("suggested__videos_sec
 const pageTitle = document.getElementsByTagName("title")[0];
 const showMoreDescription = document.querySelector(".video__description>.description__showbtn");
 const total_comments = document.getElementById("total_comments");
+const searchForm = document.getElementById("search-box");
+const backToHome = document.getElementById("backToHomepage");
+
+backToHome.addEventListener("click", ()=>{
+    localStorage.removeItem("searchQuerry");
+    localStorage.removeItem("searchedForVid");
+    localStorage.removeItem("currentVideoId");
+    window.location.href = "../index.html";
+})
+searchForm.addEventListener("submit", (event)=>{
+    event.preventDefault();
+    const searchQuerry = document.getElementById("search-input").value;
+    localStorage.setItem("searchQuerry", searchQuerry);
+    localStorage.setItem("searchedForVid", true);
+    window.location.href = "../index.html";
+})
+
 videoDescription.addEventListener("click", handleDescription);
 
 let descriptionCollapsed = true;
@@ -25,8 +42,8 @@ function handleDescription() {
     document.querySelector(".video__description>.description__showbtn").innerText = (descriptionCollapsed) ? "show more ...": "show less ...";
 }
 
-
 window.addEventListener("load",()=>{
+    localStorage.setItem("searchedForVid", false);
     if(!videoId){
         alert("please redirect to homepage");
         window.location.href = "../index.html";
@@ -180,6 +197,7 @@ async function handleCommentReplies(target){
 
 async function fetchSuggestedVideos(){
     const searchQuerry = localStorage.getItem('searchQuerry') || "";
+    // localStorage.removeItem('searchQuerry');
     const response = await fetch(BASE_URL + "/search?" + new URLSearchParams({
         key: API_KEY,
         part: "id",
