@@ -1,4 +1,4 @@
-const API_KEY = 'AIzaSyAqd7NEpSmfCeJXdBwNVr51JZUHOVhd_Xo';
+const API_KEY = 'AIzaSyAKSaLauGXZc8-IK42y74ew07xM-7ZHbcM';
 const BASE_URL = 'https://www.googleapis.com/youtube/v3';
 const MAX_RESULTS = 18;
 // ! Handle Sidebar Menu collapse functionality ==>>
